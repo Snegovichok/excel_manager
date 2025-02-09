@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Создание таблицы (Администратор)</title>
+  <link rel="stylesheet" href="{% static 'project_beta/css/style.css' %}">
+</head>
+<body>
+  <header class="top-bar">
+    Excel Manager
+  </header>
+  <header>
+    <h1>Создание таблицы (Администратор)</h1>
+  </header>
+  <div class="container">
+    <!-- Имитируем интерфейс Excel -->
+    <div class="excel-interface">
+      <p>Здесь будет имитация Excel-интерфейса (статичное изображение таблицы)</p>
+      <div class="excel-table-placeholder">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>A</th>
+              <th>B</th>
+              <th>C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Ячейка A1</td>
+              <td>Ячейка B1</td>
+              <td>Ячейка C1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Ячейка A2</td>
+              <td>Ячейка B2</td>
+              <td>Ячейка C2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <a href="admin_dashboard.html" class="button">Сохранить</a>
+  </div>
+  <script src="{% static 'project_beta/js/script.js' %}"></script>
+  <footer class="bottom-bar">
+    2025 © Excel Manager. Все права защищены.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Добавить организацию</title>
+  <link rel="stylesheet" href="{% static 'project_beta/css/style.css' %}">
+</head>
+<body>
+  <header class="top-bar">
+    Excel Manager
+  </header>
+  <div class="container">
+    <h1>Добавить организацию</h1>
+    <form id="add-organization-form">
+      <label for="org-name">Название организации:</label>
+      <input type="text" id="org-name" name="org-name" required>
+      <button type="submit">Добавить</button>
+    </form>
+    <p><a href="admin_dashboard.html" class="button">Назад в панель администратора</a></p>
+  </div>
+  <script src="{% static 'project_beta/js/script.js' %}"></script>
+  <footer class="bottom-bar">
+    2025 © Excel Manager. Все права защищены.
+  </footer>
+</body>
+</html>

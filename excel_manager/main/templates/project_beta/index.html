@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход в систему</title>
+  <link rel="stylesheet" href="{% static 'project_beta/css/style.css' %}">
+</head>
+<body>
+
+  <header class="top-bar">
+    Excel Manager
+  </header>
+
+  <div class="container">
+    <h1>Вход в систему</h1>
+    <form id="login-form">
+      <label for="phone">Номер телефона:</label>
+      <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+      
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <button type="submit">Вход</button>
+    </form>
+    <p>Нет аккаунта? <a href="register.html" class="button">Зарегистрироваться</a></p>
+  </div>
+  <script src="{% static 'project_beta/js/script.js' %}"></script>
+
+  <footer class="bottom-bar">
+    2025 © Excel Manager. Все права защищены.
+  </footer>
+
+</body>
+</html>

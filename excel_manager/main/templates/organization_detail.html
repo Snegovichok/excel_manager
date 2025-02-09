@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}Дашборд организации{% endblock %}
+
+{% block content %}
+<div class="container my-3">
+  {% if file_url %}
+    <div class="d-flex justify-content-start mb-3">
+      <a href="{{ file_url }}" class="btn btn-success" download>Скачать Excel</a>
+    </div>
+    <div class="alert alert-info">
+      <p>Обработанный файл сохранён в оригинальном формате на сервере.<br>
+      Вы можете скачать его или посмотреть данные ниже.</p>
+    </div>
+  {% else %}
+    <p class="text-danger">Нет доступных данных.</p>
+  {% endif %}
+
+  {% if tables %}
+    <h3>Таблицы из Excel</h3>
+    <ul class="nav nav-tabs" id="sheetTabs">
+      {% for sheet, table in tables.items %}
+        <li class="nav-item">
+          <a class="nav-link {% if forloop.first %}active{% endif %}" data-bs-toggle="tab" href="#tab-{{ forloop.counter }}">
+            {{ sheet }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="tab-content mt-3">
+      {% for sheet, table in tables.items %}
+        <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="tab-{{ forloop.counter }}">
+          <div class="table-responsive">
+            {{ table | safe }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+<!-- Подключаем CSS для DataTables и FixedHeader -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.2/css/fixedHeader.dataTables.min.css">
+
+<!-- Дополнительные стили -->
+<style>
+  .nowrap {
+      white-space: nowrap;
+  }
+  /* Если необходимо дополнительно фиксировать блоки управления внутри DataTables */
+  .dataTables_wrapper .row:first-child {
+      position: sticky;
+      top: 0;
+      background: white;
+      z-index: 10;
+      padding: 5px 0;
+  }
+  .dataTables_wrapper .row:last-child {
+      position: sticky;
+      bottom: 0;
+      background: white;
+      z-index: 10;
+      padding: 5px 0;
+  }
+  table.dataTable {
+      width: 100% !important;
+  }
+</style>
+
+<!-- Подключаем jQuery, DataTables и FixedHeader JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/3.2.2/js/dataTables.fixedHeader.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.11.5/i18n/ru.json"></script>
+
+<script>
+$(document).ready(function() {
+    $("table").each(function() {
+        $(this).DataTable({
+            "scrollX": true,
+            // Задаем высоту таблицы так, чтобы она вписывалась в окно браузера.
+            // Значение "calc(100vh - 250px)" означает: 100% высоты окна минус 250px (это значение можно корректировать под ваш макет)
+            "scrollY": "calc(100vh - 250px)",
+            "scrollCollapse": true,
+            "fixedHeader": true,  // Фиксируем заголовок таблицы и связанные элементы управления
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/ru.json"
+            },
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "info": true
+        });
+    });
+});
+</script>
+
+{% endblock %}

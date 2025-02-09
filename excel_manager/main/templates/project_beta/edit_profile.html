@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Редактирование профиля</title>
+  <link rel="stylesheet" href="{% static 'project_beta/css/style.css' %}">
+</head>
+<body>
+  <header class="top-bar">
+    Excel Manager
+  </header>
+  <header>
+    <h1>Редактирование профиля</h1>
+  </header>
+  <div class="container">
+    <form id="edit-profile-form">
+      <label for="fullname">Ф.И.О.:</label>
+      <input type="text" id="fullname" name="fullname" value="Иван Иванов" required>
+      
+      <label for="birthdate">Дата рождения:</label>
+      <input type="date" id="birthdate" name="birthdate" value="1990-01-01" required>
+      
+      <label for="organization">Организация:</label>
+      <select id="organization" name="organization" required>
+        <option value="org1" selected>Организация 1</option>
+        <option value="org2">Организация 2</option>
+        <option value="org3">Организация 3</option>
+      </select>
+      
+      <label for="position">Должность:</label>
+      <input type="text" id="position" name="position" value="Менеджер" required>
+      
+      <label for="phone">Номер телефона:</label>
+      <input type="tel" id="phone" name="phone" value="+7 (123) 456-78-90" required>
+      
+      <div class="form-actions">
+        <button type="submit">Сохранить</button>
+        <a href="user_dashboard.html" class="button">Отменить изменения</a>
+      </div>
+    </form>
+  </div>
+  <script src="{% static 'project_beta/js/script.js' %}"></script>
+  <footer class="bottom-bar">
+    2025 © Excel Manager. Все права защищены.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- main/templates/beta.html -->
+{% extends 'base.html' %}
+
+{% block title %}Бета-версия{% endblock %}
+
+{% block content %}
+<h2>Бета-версия</h2>
+<div class="d-flex flex-wrap">
+  <!-- Пример кнопок меню, ведущих на страницы из project_beta -->
+  <a href="{% url 'beta_page' 'index' %}" class="btn btn-outline-primary m-2">Главная страница – форма входа</a>
+  <a href="{% url 'beta_page' 'register' %}" class="btn btn-outline-primary m-2">Страница регистрации</a>
+  <a href="{% url 'beta_page' 'admin_dashboard' %}" class="btn btn-outline-primary m-2">Аккаунт администратора</a>
+  <a href="{% url 'beta_page' 'add_organization' %}" class="btn btn-outline-primary m-2">Страница добавления организации</a>
+  <a href="{% url 'beta_page' 'admin_create_table' %}" class="btn btn-outline-primary m-2">Создание таблицы для администратора</a>
+  <a href="{% url 'beta_page' 'admin_edit_table' %}" class="btn btn-outline-primary m-2">Редактирование таблицы для администратора</a>
+  <a href="{% url 'beta_page' 'user_dashboard' %}" class="btn btn-outline-primary m-2">Аккаунт пользователя</a>
+  <a href="{% url 'beta_page' 'user_tables' %}" class="btn btn-outline-primary m-2">Список таблиц пользователя</a>
+  <a href="{% url 'beta_page' 'user_create_table' %}" class="btn btn-outline-primary m-2">Создание таблицы для пользователя</a>
+  <a href="{% url 'beta_page' 'user_edit_table' %}" class="btn btn-outline-primary m-2">Редактирование таблицы для пользователя</a>
+  <a href="{% url 'beta_page' 'view_table' %}" class="btn btn-outline-primary m-2">Просмотр таблицы</a>
+  <a href="{% url 'beta_page' 'edit_profile' %}" class="btn btn-outline-primary m-2">Редактирование профиля</a>
+  <a href="{% url 'beta_page' 'director_dashboard' %}" class="btn btn-outline-primary m-2">Панель директора организации</a>
+</div>
+{% endblock %}

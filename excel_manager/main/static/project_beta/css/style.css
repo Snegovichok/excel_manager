@@ -1,0 +1,185 @@
+/* css/style.css */
+
+/* Базовые стили и сброс отступов */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f5f5; /* мягкий светло-серый фон */
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  /* Добавляем отступы, чтобы контент не скрывался под фиксированными элементами */
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+
+/* Верхняя полоска с названием */
+header.top-bar {
+  background: linear-gradient(90deg, #007acc, #005fa3);
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 1.8em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Нижняя полоска с информацией */
+footer.bottom-bar {
+  background-color: #e0e0e0;
+  color: #555;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.9em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* Контейнер для основного содержимого страницы */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff; /* белый фон для контейнера */
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовки внутри контейнера */
+header, .container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+/* Стили для форм и полей ввода */
+form label {
+  display: block;
+  margin-top: 10px;
+  color: #555;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Стили для кнопок и ссылок */
+form button,
+.button {
+  display: inline-block;
+  background-color: #007acc;  /* спокойный синий акцент */
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 15px;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover,
+form button:hover {
+  background-color: #005fa3;
+}
+
+/* Блок с кнопками или действиями */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Стили для таблиц */
+.table-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.table-list th,
+.table-list td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.table-list th {
+  background-color: #f9f9f9;
+}
+
+/* Мелкие кнопки */
+.button.small {
+  padding: 5px 10px;
+  font-size: 0.9em;
+}
+
+/* Стили для имитации интерфейса Excel */
+.excel-interface {
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.excel-table-placeholder {
+  overflow-x: auto;
+}
+
+.excel-table-placeholder table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.excel-table-placeholder th,
+.excel-table-placeholder td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Стили для профиля пользователя */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.profile-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007acc; /* тонкая синяя окантовка */
+}
+
+/* Responsive design (адаптивный дизайн) */
+@media (max-width: 600px) {
+  .container {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

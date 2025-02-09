@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Панель директора организации</title>
+  <link rel="stylesheet" href="{% static 'project_beta/css/style.css' %}">
+</head>
+<body>
+  <header class="top-bar">
+    Excel Manager
+  </header>
+  <header>
+    <h1>Панель директора организации</h1>
+  </header>
+  <div class="container">
+    <h2>Сотрудники</h2>
+    <table class="table-list">
+      <thead>
+        <tr>
+          <th>Ф.И.О.</th>
+          <th>Должность</th>
+          <th>Контактный телефон</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Иван Иванов</td>
+          <td>Менеджер</td>
+          <td>+7 (123) 456-78-90</td>
+        </tr>
+        <tr>
+          <td>Петр Петров</td>
+          <td>Аналитик</td>
+          <td>+7 (987) 654-32-10</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2>Отчеты</h2>
+    <ul class="report-list">
+      <li><a href="view_table.html">Отчет за январь 2025</a></li>
+      <li><a href="view_table.html">Отчет за февраль 2025</a></li>
+    </ul>
+  </div>
+  <script src="{% static 'project_beta/js/script.js' %}"></script>
+  <footer class="bottom-bar">
+    2025 © Excel Manager. Все права защищены.
+  </footer>
+</body>
+</html>

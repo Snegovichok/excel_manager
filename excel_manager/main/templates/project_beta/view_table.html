@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Просмотр таблицы</title>
+  <link rel="stylesheet" href="{% static 'project_beta/css/style.css' %}">
+</head>
+<body>
+  <header class="top-bar">
+    Excel Manager
+  </header>
+  <header>
+    <h1>Просмотр таблицы</h1>
+  </header>
+  <div class="container">
+    <!-- Статичный Excel-интерфейс без возможности редактирования -->
+    <div class="excel-interface">
+      <p>Статичное изображение Excel-интерфейса</p>
+      <div class="excel-table-placeholder">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>A</th>
+              <th>B</th>
+              <th>C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Ячейка A1</td>
+              <td>Ячейка B1</td>
+              <td>Ячейка C1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Ячейка A2</td>
+              <td>Ячейка B2</td>
+              <td>Ячейка C2</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="actions">
+      <button onclick="downloadTable()">Скачать</button>
+      <button onclick="printTable()">Распечатать</button>
+      <a href="user_dashboard.html" class="button">Закрыть Excel</a>
+    </div>
+  </div>
+  <script src="{% static 'project_beta/js/script.js' %}"></script>
+  <footer class="bottom-bar">
+    2025 © Excel Manager. Все права защищены.
+  </footer>
+</body>
+</html>
